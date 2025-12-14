@@ -1,6 +1,8 @@
 package com.personal.peluqueriacanina.logica;
 
 import com.personal.peluqueriacanina.persistencia.ControladoraPersistencia;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  * @file Controlador.java
@@ -33,6 +35,12 @@ public class Controladora {
         masco.setUnDuenio(duenio);
         
         controlPersis.guardar(duenio, masco);
+        
+        JOptionPane optionPane = new JOptionPane("Se guardó correctamente");
+        optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        JDialog dialog = optionPane.createDialog("Guardado exitoso");
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
     }
 
 }
