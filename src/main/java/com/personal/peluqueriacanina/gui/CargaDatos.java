@@ -1,8 +1,13 @@
 package com.personal.peluqueriacanina.gui;
 
+import com.personal.peluqueriacanina.logica.Controladora;
+
 public class CargaDatos extends javax.swing.JFrame {
 
+    Controladora control = new Controladora();
+    
     public CargaDatos() {
+        //control = new Controladora();
         initComponents();
     }
 
@@ -57,7 +62,7 @@ public class CargaDatos extends javax.swing.JFrame {
 
         txtNombre.addActionListener(this::txtNombreActionPerformed);
 
-        txtNombreDuenio.addActionListener(this::txtNombreDuenioActionPerformed);
+        txtNombreDuenio.addActionListener(this::txtNombreActionPerformed);
 
         txtObservaciones.setColumns(20);
         txtObservaciones.setRows(5);
@@ -155,6 +160,7 @@ public class CargaDatos extends javax.swing.JFrame {
 
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -232,6 +238,23 @@ public class CargaDatos extends javax.swing.JFrame {
         cmbAlergico.setSelectedIndex(0);
         cmbAtencionEspecial.setSelectedIndex(0);
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+        String nombreMasco = txtNombre.getText();
+        String raza = txtRaza.getText();
+        String color = txtColor.getText();
+        String observaciones = txtObservaciones.getText();
+        String alergico = (String)cmbAlergico.getSelectedItem();
+        String atenEsp = (String)cmbAtencionEspecial.getSelectedItem();
+        
+        String nombreDuenio = txtNombreDuenio.getText();
+        String celDuenio = txtCelDuenio.getText();
+        
+        control.guardar(nombreMasco, raza, color, observaciones, alergico, atenEsp,
+                nombreDuenio, celDuenio);
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
