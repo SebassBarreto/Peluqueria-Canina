@@ -11,7 +11,5 @@ package com.personal.peluqueriacanina.persistencia;
  */
 
 public class ControladorPersistencia {
-
-    
-    
+    //mapea por mascota y dueño
 }

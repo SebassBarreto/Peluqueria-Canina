@@ -1,3 +1,7 @@
+com\personal\peluqueriacanina\gui\Principal.class
+com\personal\peluqueriacanina\logica\Duenio.class
+com\personal\peluqueriacanina\logica\Controlador.class
+com\personal\peluqueriacanina\persistencia\ControladorPersistencia.class
 com\personal\peluqueriacanina\gui\CargaDatos.class
 com\personal\peluqueriacanina\PeluqueriaCanina.class
-com\personal\peluqueriacanina\gui\Principal.class
+com\personal\peluqueriacanina\logica\Mascota.class

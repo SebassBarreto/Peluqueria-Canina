@@ -1,6 +1,11 @@
 package com.personal.peluqueriacanina.logica;
 
-import com.personal.peluqueriacanina.logica.Duenio;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * @file Mascota.java
@@ -12,8 +17,11 @@ import com.personal.peluqueriacanina.logica.Duenio;
  * @author Sebastian Barreto
  */
 
-public class Mascota {    
+@Entity
+public class Mascota implements Serializable  {    
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int num_cliente;
     private String nombre;
     private String raza;
@@ -22,6 +30,7 @@ public class Mascota {
     private String atencion_especial;
     private String observaciones;
     
+    @OneToOne
     private Duenio unDuenio; //relacion 1 a 1, despues le cuadro relacion 1 a n porque 1 dueño puede tener n mascotas
 
     public Mascota() {
@@ -101,8 +110,4 @@ public class Mascota {
     public void setUnDuenio(Duenio unDuenio) {
         this.unDuenio = unDuenio;
     }
-    
-    
-    
-    
 }
