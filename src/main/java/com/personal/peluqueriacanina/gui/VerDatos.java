@@ -210,8 +210,6 @@ public class VerDatos extends javax.swing.JFrame {
         JDialog dialog = optionPane.createDialog(titulo);
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
-        
-        
     }
             
 
