@@ -259,6 +259,7 @@ public class ModificarDatos extends javax.swing.JFrame {
         
         control.modificarMascota(masco, nombreMasco, raza, color, observaciones,alergico,atenEsp, nombreDuenio, celDuenio);
         
+        mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion Correcta");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
@@ -314,7 +315,18 @@ public class ModificarDatos extends javax.swing.JFrame {
                 cmbAtencionEspecial.setSelectedIndex(2);
             }
         }
-        
-        
+    }
+    
+    public void mostrarMensaje(String mensaje, String tipo, String titulo){
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if(tipo.equals("Info")){
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(tipo.equals("Error")){
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
     }
 }
