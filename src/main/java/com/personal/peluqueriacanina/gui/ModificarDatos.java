@@ -260,6 +260,13 @@ public class ModificarDatos extends javax.swing.JFrame {
         control.modificarMascota(masco, nombreMasco, raza, color, observaciones,alergico,atenEsp, nombreDuenio, celDuenio);
         
         mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion Correcta");
+        
+        this.dispose();
+        VerDatos pantalla = new VerDatos();
+        
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
