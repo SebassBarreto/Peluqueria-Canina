@@ -1,5 +1,7 @@
+com\personal\peluqueriacanina\gui\ModificarDatos.class
 com\personal\peluqueriacanina\gui\VerDatos$1.class
 com\personal\peluqueriacanina\logica\Duenio.class
+com\personal\peluqueriacanina\gui\VerDatos$4.class
 com\personal\peluqueriacanina\persistencia\exceptions\NonexistentEntityException.class
 com\personal\peluqueriacanina\persistencia\exceptions\PreexistingEntityException.class
 com\personal\peluqueriacanina\persistencia\exceptions\IllegalOrphanException.class

@@ -67,6 +67,11 @@ public class VerDatos extends javax.swing.JFrame {
         });
 
         jButton3.setText("Editar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,16 +165,39 @@ public class VerDatos extends javax.swing.JFrame {
                 //mensaje de eliminacion exitosa
                 mostrarMensaje("Mascota eliminada exitosamente", "Info", "Borrado de mascota");
                 cargarTabla();
-            }
-            else{
+            }else{
                 mostrarMensaje("No seleccionó ninguna mascota", "Error", "Error al eliminar");                
             }
-        }
-        
-        else{
+            
+        }else{
             mostrarMensaje("No hay nada en la tabla", "Info", "Borrado de mascota");
         }
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        //tabla no vacia
+        if(tablaMascotas.getRowCount() > 0){
+            
+            //minimo se seleccionó algún registro
+            if(tablaMascotas.getSelectedRow() != -1){
+                //obtengo id de la mascota a editar
+                int num_cliente = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
+                
+                ModificarDatos pantallaModif = new ModificarDatos(num_cliente);
+                
+                pantallaModif.setVisible(true);
+                pantallaModif.setLocationRelativeTo(null);
+                
+            }else{
+                mostrarMensaje("No seleccionó ninguna mascota", "Error", "Error al eliminar");                
+            }
+            
+        }else{
+            mostrarMensaje("No hay nada en la tabla", "Info", "Borrado de mascota");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public void mostrarMensaje(String mensaje, String tipo, String titulo){
         JOptionPane optionPane = new JOptionPane(mensaje);
